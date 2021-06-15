@@ -29,6 +29,7 @@ class PoliciesAcceptMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Accepting the policy docrom.info')->markdown('email.acceptPolicy');
+        return $this->subject('Accept Politica Cookie de la '. $this->details['cookieID'])
+                    ->markdown('email.acceptPolicy');
     }
 }

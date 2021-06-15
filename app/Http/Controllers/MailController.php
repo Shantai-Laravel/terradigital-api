@@ -12,6 +12,9 @@ class MailController extends Controller
     public function acceptPolicies(Request $request)
     {
         try {
+            // $to = 'docrom2021@gmail.com';
+            $to = 'iovitatudor@gmail.com';
+
             $data = [
                 'name' => $request->get('name'),
                 'cookieID' => $request->get('cookieID'),
@@ -19,7 +22,7 @@ class MailController extends Controller
                 'device' => $request->get('device')
             ];
 
-            Mail::to('iovitatudor@gmail.com')->send(new PoliciesAcceptMail($data));
+            Mail::to($to)->send(new PoliciesAcceptMail($data));
             return new PoliciesAcceptMail($data);
         } catch (\Exception $e) {
             dd('error');
