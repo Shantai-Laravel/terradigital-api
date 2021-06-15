@@ -23,7 +23,7 @@ class MailController extends Controller
             ];
 
             Mail::to($to)->send(new PoliciesAcceptMail($data));
-            return new PoliciesAcceptMail($data);
+            // return new PoliciesAcceptMail($data);
         } catch (\Exception $e) {
             dd('error');
         }

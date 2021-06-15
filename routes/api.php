@@ -17,7 +17,7 @@ use App\Http\Controllers\MailController;
 |
 */
 
-Route::any('mail/acceptPolicies', [MailController::class, 'acceptPolicies']);
+Route::post('mail/acceptPolicies', [MailController::class, 'acceptPolicies']);
 
 // Route::group(['middleware' => 'cors'], function(){
 //     Route::any('mail/acceptPolicies', [MailController::class, 'acceptPolicies']);
