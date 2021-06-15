@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\CallRequestMail;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +16,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::get('test-email', function ()
+{
+    Mail::to('iovitatudor@gmail.com')->send(new CallRequestMail());
+    return new CallRequestMail();
+});
+
+
+Route::group(['middleware' => ['auth:sanctum']], function() {
+    Route::post('/test', function() {
+        dd('lorem');
+    });
 });
