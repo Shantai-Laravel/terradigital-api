@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\CallRequestMail;
+use App\Http\Controllers\MailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,15 +17,11 @@ use App\Mail\CallRequestMail;
 |
 */
 
-Route::get('test-email', function ()
-{
-    Mail::to('iovitatudor@gmail.com')->send(new CallRequestMail());
-    return new CallRequestMail();
-});
+Route::any('mail/acceptPolicies', [MailController::class, 'acceptPolicies']);
 
 
 Route::group(['middleware' => ['auth:sanctum']], function() {
     Route::post('/test', function() {
-        dd('lorem');
+        dd('test auth');
     });
 });

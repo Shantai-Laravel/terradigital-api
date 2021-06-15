@@ -7,18 +7,19 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class CallRequestMail extends Mailable
+class PoliciesAcceptMail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $details;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($details)
     {
-        //
+        $this->details = $details;
     }
 
     /**
@@ -28,6 +29,6 @@ class CallRequestMail extends Mailable
      */
     public function build()
     {
-        return $this->markdown('email.call-request');
+        return $this->subject('Accepting the policy docrom.info')->markdown('email.call-request');
     }
 }
