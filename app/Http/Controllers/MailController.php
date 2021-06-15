@@ -22,7 +22,7 @@ class MailController extends Controller
             Mail::to('iovitatudor@gmail.com')->send(new PoliciesAcceptMail($data));
             return new PoliciesAcceptMail($data);
         } catch (\Exception $e) {
-            dd('vdf');
+            dd('error');
         }
     }
 }

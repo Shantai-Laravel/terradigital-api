@@ -301,3 +301,8 @@ img {
     width: 50% !important;
     color: #000 !important;
 }
+
+.sub-title{
+    font-size: 15px;
+    color: #000;
+}

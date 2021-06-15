@@ -1,11 +1,11 @@
 @component('mail::message')
 # Buna ziua,
 
-<small>
+<p class="sub-title">
     Acesta este un email de notificare, care confirma acceptul Utilizatorului cu
     politica Cookie si cu faptul ca este de acord sa fie contactat prin internediul
     Chatului si VideoChatului instalate pe site-ul www.docrom.info.
-</small>
+</p>
 
 @component('mail::subcopy')
 
