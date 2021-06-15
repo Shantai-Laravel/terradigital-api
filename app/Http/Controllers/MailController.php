@@ -12,9 +12,7 @@ class MailController extends Controller
     public function acceptPolicies(Request $request)
     {
         try {
-            // $to = 'docrom2021@gmail.com';
-            $to = 'iovitatudor@gmail.com';
-
+            $to = 'docrom2021@gmail.com';
             $data = [
                 'name' => $request->get('name'),
                 'cookieID' => $request->get('cookieID'),
