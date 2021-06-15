@@ -17,8 +17,10 @@ use App\Http\Controllers\MailController;
 |
 */
 
-Route::any('mail/acceptPolicies', [MailController::class, 'acceptPolicies']);
 
+Route::group(['middleware' => 'cors'], function(){
+    Route::any('mail/acceptPolicies', [MailController::class, 'acceptPolicies']);
+});
 
 Route::group(['middleware' => ['auth:sanctum']], function() {
     Route::post('/test', function() {
