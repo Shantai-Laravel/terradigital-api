@@ -22,7 +22,7 @@ Route::post('/mail/acceptPolicies', [MailController::class, 'acceptPolicies']);
 Route::get('/login/{service}', [SocialLoginController::class, 'redirect']);
 Route::get('/login/{service}/callback', [SocialLoginController::class, 'callback']);
 
-Route::get('/auth-user', [SocialLoginController::class, 'getAuthUser']);
+// Route::get('/auth-user', [SocialLoginController::class, 'getAuthUser']);
 
 Route::group(['middleware' => 'cors'], function(){
     Route::get('/auth-user', [SocialLoginController::class, 'getAuthUser']);
