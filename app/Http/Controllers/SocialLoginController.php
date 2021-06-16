@@ -22,8 +22,6 @@ class SocialLoginController extends Controller
         $name = $serviceUser->getName();
         $id = $serviceUser->getId();
 
-        // dd($email, $name, $id);
-
         $user = AuthUser::where('email', $email)->first();
 
         if (!$user) {
@@ -37,6 +35,6 @@ class SocialLoginController extends Controller
             ]);
         }
 
-        dd($serviceUser, $email, $name, $id, $user, $hash);
+        return redirect('https://docrom.info/social/login?'.$user->hash)
     }
 }
