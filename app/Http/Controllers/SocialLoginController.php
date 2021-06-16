@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Http\Request;
 use Laravel\Socialite\Facades\Socialite;
 use App\Models\AuthUser;
+
 
 class SocialLoginController extends Controller
 {
@@ -36,5 +38,12 @@ class SocialLoginController extends Controller
         }
 
         return redirect('https://docrom.info/social/login?user='.$user->hash);
+    }
+
+    public function getAuthUser(Request $request)
+    {
+        $user = AuthUser::where('hash', $request->input('hash'))->first();
+
+        return $user;
     }
 }
