@@ -22,6 +22,9 @@ class SocialLoginController extends Controller
         $name = $serviceUser->getName();
         $id = $serviceUser->getId();
 
+        dd($email, $name, $id);
+
+
         $user = AuthUser::where('email', $email)->find();
 
         if (!$user) {
