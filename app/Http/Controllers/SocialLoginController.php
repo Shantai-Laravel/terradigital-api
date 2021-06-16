@@ -32,7 +32,7 @@ class SocialLoginController extends Controller
                 'email' => $email,
                 'name' => $name,
                 'driver' => $service,
-                'driverId' => $id,
+                'driver_id' => $id,
                 'hash' => $hash
             ]);
         }

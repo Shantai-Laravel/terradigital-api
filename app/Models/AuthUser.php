@@ -18,7 +18,7 @@ class AuthUser extends Model
         'name',
         'email',
         'driver',
-        'driverId',
+        'driver_id',
         'hash',
     ];
 }
