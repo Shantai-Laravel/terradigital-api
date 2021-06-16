@@ -35,6 +35,6 @@ class SocialLoginController extends Controller
             ]);
         }
 
-        return redirect('https://docrom.info/social/login?'.$user->hash);
+        return redirect('https://docrom.info/social/login?user='.$user->hash);
     }
 }
