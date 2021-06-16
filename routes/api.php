@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\CallRequestMail;
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\SocialLoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +18,9 @@ use App\Http\Controllers\MailController;
 |
 */
 
-Route::post('mail/acceptPolicies', [MailController::class, 'acceptPolicies']);
+Route::post('/mail/acceptPolicies', [MailController::class, 'acceptPolicies']);
+Route::get('/login/{service}', [SocialLoginController::class, 'redirect']);
+Route::get('/login/{service}/callback', [SocialLoginController::class, 'callback']);
 
 // Route::group(['middleware' => 'cors'], function(){
 //     Route::any('mail/acceptPolicies', [MailController::class, 'acceptPolicies']);
