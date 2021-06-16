@@ -24,9 +24,10 @@ Route::get('/login/{service}/callback', [SocialLoginController::class, 'callback
 
 Route::get('/auth-user', [SocialLoginController::class, 'getAuthUser']);
 
-// Route::group(['middleware' => 'cors'], function(){
-//     Route::any('mail/acceptPolicies', [MailController::class, 'acceptPolicies']);
-// });
+Route::group(['middleware' => 'cors'], function(){
+    Route::get('/auth-user', [SocialLoginController::class, 'getAuthUser']);
+    // Route::any('mail/acceptPolicies', [MailController::class, 'acceptPolicies']);
+});
 
 Route::group(['middleware' => ['auth:sanctum']], function() {
     Route::post('/test', function() {
