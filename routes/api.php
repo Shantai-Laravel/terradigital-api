@@ -21,6 +21,7 @@ use App\Http\Controllers\SocialLoginController;
 Route::post('/mail/acceptPolicies', [MailController::class, 'acceptPolicies']);
 Route::get('/login/{service}', [SocialLoginController::class, 'redirect']);
 Route::get('/login/{service}/callback', [SocialLoginController::class, 'callback']);
+Route::get('/login/cancel', [SocialLoginController::class, 'cancel']);
 
 Route::get('/auth-user', [SocialLoginController::class, 'getAuthUser']);
 

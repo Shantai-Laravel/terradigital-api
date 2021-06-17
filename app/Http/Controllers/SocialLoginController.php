@@ -45,4 +45,9 @@ class SocialLoginController extends Controller
 
         return $user;
     }
+
+    public function cancel()
+    {
+        return redirect('https://docrom.info');
+    }
 }
