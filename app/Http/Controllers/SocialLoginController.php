@@ -17,6 +17,14 @@ class SocialLoginController extends Controller
 
     public function callback($service)
     {
+        if ($request->input('error') === 'access_denied') {
+            return redirect('https://docrom.info');
+        }
+
+        if ($request->input('error_code') === 200) {
+            return redirect('https://docrom.info');
+        }
+
         $serviceUser = Socialite::driver($service)->stateless()->user();
 
         $email = $serviceUser->getEmail();
