@@ -15,7 +15,7 @@ class SocialLoginController extends Controller
         return Socialite::driver($service)->stateless()->redirect();
     }
 
-    public function callback($service)
+    public function callback(Request $request, $service)
     {
         if ($request->input('error') === 'access_denied') {
             return redirect('https://docrom.info');
