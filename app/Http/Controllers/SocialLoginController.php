@@ -18,11 +18,11 @@ class SocialLoginController extends Controller
     public function callback(Request $request, $service)
     {
         if ($request->input('error') === 'access_denied') {
-            return redirect('https://terradigital.info');
+            return redirect('https://terradigital.ro');
         }
 
         if ($request->input('error_code') === 200) {
-            return redirect('https://terradigital.info');
+            return redirect('https://terradigital.ro');
         }
 
         $serviceUser = Socialite::driver($service)->stateless()->user();
@@ -44,7 +44,7 @@ class SocialLoginController extends Controller
             ]);
         }
 
-        return redirect('https://terradigital.info/social/login?user='.$user->hash);
+        return redirect('https://terradigital.ro/social/login?user='.$user->hash);
     }
 
     public function getAuthUser(Request $request)
@@ -56,6 +56,6 @@ class SocialLoginController extends Controller
 
     public function cancel()
     {
-        return redirect('https://terradigital.info');
+        return redirect('https://terradigital.ro');
     }
 }
